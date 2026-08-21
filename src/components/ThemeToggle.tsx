@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useLayoutEffect, useSyncExternalStore } from "react";
 import { MoonIcon, SunIcon } from "./icons";
 
@@ -18,6 +19,7 @@ function getServerSnapshot() {
 }
 
 export default function ThemeToggle() {
+  const t = useTranslations("theme");
   const isDark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   // React Strict Mode remounts the tree in development and resets attributes
@@ -41,7 +43,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label="Byt mellan ljust och mörkt tema"
+      aria-label={t("toggle")}
       className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-accent hover:text-accent-text"
     >
       {isDark ? <SunIcon className="h-[18px] w-[18px]" /> : <MoonIcon className="h-[18px] w-[18px]" />}

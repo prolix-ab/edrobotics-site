@@ -1,32 +1,36 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Link } from "@/i18n/navigation";
 import { getAllSlugs, getPostBySlug } from "@/lib/posts";
 import { formatPostDay, formatPostMonth } from "@/lib/date";
 
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return getAllSlugs("sv").map((slug) => ({ slug }));
 }
 
-export async function generateMetadata(props: PageProps<"/blogg/[slug]">): Promise<Metadata> {
-  const { slug } = await props.params;
+export async function generateMetadata(props: PageProps<"/[locale]/blogg/[slug]">): Promise<Metadata> {
+  const { locale, slug } = await props.params;
   try {
-    const post = await getPostBySlug(slug);
+    const post = await getPostBySlug(locale, slug);
     return {
       title: `${post.title} | ED Robotics`,
       description: post.excerpt,
     };
   } catch {
-    return { title: "Inlägg hittades inte | ED Robotics" };
+    const t = await getTranslations({ locale, namespace: "blog" });
+    return { title: t("notFound") };
   }
 }
 
-export default async function BlogPostPage(props: PageProps<"/blogg/[slug]">) {
-  const { slug } = await props.params;
+export default async function BlogPostPage(props: PageProps<"/[locale]/blogg/[slug]">) {
+  const { locale, slug } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations("blog");
 
   let post;
   try {
-    post = await getPostBySlug(slug);
+    post = await getPostBySlug(locale, slug);
   } catch {
     notFound();
   }
@@ -37,7 +41,7 @@ export default async function BlogPostPage(props: PageProps<"/blogg/[slug]">) {
         href="/blogg"
         className="mb-6 inline-flex items-center gap-2 font-mono text-[0.78rem] uppercase tracking-widest text-muted hover:text-accent-text"
       >
-        ← Alla inlägg
+        {t("backToAll")}
       </Link>
 
       <div className="mb-3 font-mono text-xs text-muted">
@@ -46,9 +50,9 @@ export default async function BlogPostPage(props: PageProps<"/blogg/[slug]">) {
       <h1 className="mb-5 text-3xl font-extrabold tracking-tight sm:text-4xl">{post.title}</h1>
 
       <div className="mb-9 flex flex-wrap gap-2">
-        {post.tags.map((t) => (
-          <span key={t} className="chip">
-            {t}
+        {post.tags.map((tag) => (
+          <span key={tag} className="chip">
+            {tag}
           </span>
         ))}
       </div>

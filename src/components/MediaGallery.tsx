@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 import type { GalleryImage } from "@/data/content";
 
 export default function MediaGallery({ images }: { images: GalleryImage[] }) {
+  const t = useTranslations("media");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setOpenIndex(null), []);
@@ -43,7 +45,7 @@ export default function MediaGallery({ images }: { images: GalleryImage[] }) {
             key={img.src}
             type="button"
             onClick={() => setOpenIndex(i)}
-            aria-label={`Visa bild i större format: ${img.alt}`}
+            aria-label={t("viewLarger", { alt: img.alt })}
             className="relative aspect-square overflow-hidden rounded-xl border border-border bg-surface-2"
           >
             <Image
@@ -68,7 +70,7 @@ export default function MediaGallery({ images }: { images: GalleryImage[] }) {
           <button
             type="button"
             onClick={close}
-            aria-label="Stäng"
+            aria-label={t("close")}
             className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white hover:border-white/60"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
@@ -83,7 +85,7 @@ export default function MediaGallery({ images }: { images: GalleryImage[] }) {
               e.stopPropagation();
               showPrev();
             }}
-            aria-label="Föregående bild"
+            aria-label={t("prev")}
             className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 text-white hover:border-white/60 sm:left-6"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
@@ -96,7 +98,7 @@ export default function MediaGallery({ images }: { images: GalleryImage[] }) {
               e.stopPropagation();
               showNext();
             }}
-            aria-label="Nästa bild"
+            aria-label={t("next")}
             className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 text-white hover:border-white/60 sm:right-6"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">

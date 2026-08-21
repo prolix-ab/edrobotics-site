@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Manrope, JetBrains_Mono, Archivo, Jost } from "next/font/google";
-import "./globals.css";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import Script from "next/script";
+import "../globals.css";
+import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { InlineScript } from "@/components/InlineScript";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -37,11 +41,18 @@ const jost = Jost({
   weight: ["300"],
 });
 
-export const metadata: Metadata = {
-  title: "ED Robotics — Erik Dahlbergsgymnasiet",
-  description:
-    "ED Robotics är en förening på Erik Dahlbergsgymnasiet i Jönköping som inspirerar och skapar framtidens innovatörer genom FIRST Robotics Competition och RoboCup.",
-};
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata(props: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "site" });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 const themeInitScript = `(function () {
   try {
@@ -53,21 +64,31 @@ const themeInitScript = `(function () {
   } catch (e) {}
 })();`;
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
+
   return (
     <html
-      lang="sv"
+      lang={locale}
       data-theme="light"
       suppressHydrationWarning
       className={`${bricolage.variable} ${manrope.variable} ${jetbrainsMono.variable} ${archivo.variable} ${jost.variable} h-full antialiased`}
     >
       <head>
-        <InlineScript html={themeInitScript} />
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <NextIntlClientProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

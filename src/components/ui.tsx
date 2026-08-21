@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { Link } from "@/i18n/navigation";
 import type { Sponsor } from "@/data/content";
 
 export function DimRule({ label, className = "" }: { label: string; className?: string }) {
@@ -52,10 +52,10 @@ export function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
   );
 }
 
-export function OpenSponsorSlot() {
+export function OpenSponsorSlot({ label }: { label: string }) {
   return (
     <div className="flex h-28 flex-1 basis-[180px] items-center justify-center rounded-[14px] border border-dashed border-border p-6 text-center font-mono text-[0.72rem] font-medium uppercase tracking-widest text-muted-2">
-      + Bli vår nästa partner
+      {label}
     </div>
   );
 }

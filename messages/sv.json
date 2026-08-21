@@ -1,0 +1,173 @@
+{
+  "site": {
+    "title": "ED Robotics — Erik Dahlbergsgymnasiet",
+    "description": "ED Robotics är en förening på Erik Dahlbergsgymnasiet i Jönköping som inspirerar och skapar framtidens innovatörer genom FIRST Robotics Competition och RoboCup."
+  },
+  "nav": {
+    "home": "Hem",
+    "about": "Om oss",
+    "partners": "Partners",
+    "blog": "Blogg",
+    "media": "Media",
+    "contact": "Kontakt",
+    "openMenu": "Öppna meny"
+  },
+  "theme": {
+    "toggle": "Byt mellan ljust och mörkt tema"
+  },
+  "language": {
+    "sv": "Svenska",
+    "en": "Engelska",
+    "switchTo": "Byt till {lang}"
+  },
+  "footer": {
+    "tagline": "En förening som inspirerar och skapar framtidens innovatörer. Erik Dahlbergsgymnasiet, Jönköping.",
+    "pagesHeading": "Sidor",
+    "moreHeading": "Mer",
+    "followHeading": "Följ oss",
+    "sponsorship": "Sponsring",
+    "copyright": "© 2026 ED Robotics — fristående förening vid Erik Dahlbergsgymnasiet",
+    "location": "Jönköping, Sverige"
+  },
+  "home": {
+    "meta": {
+      "title": "ED Robotics — Erik Dahlbergsgymnasiet",
+      "description": "ED Robotics är en förening på Erik Dahlbergsgymnasiet i Jönköping som inspirerar och skapar framtidens innovatörer genom FIRST Robotics Competition och RoboCup."
+    },
+    "heroTitle1": "Vi bygger",
+    "heroTitle2": "framtidens",
+    "heroTitleAccent": "ingenjörer.",
+    "heroLede": "ED Robotics är en förening som inspirerar och skapar framtidens innovatörer — byggd av gymnasieelever på Erik Dahlbergsgymnasiet i Jönköping.",
+    "ctaPartner": "Bli partner",
+    "ctaJoin": "Gå med i teamet",
+    "bulletinBadge": "Aktuellt · FRC2026",
+    "bulletinTitle": "Vi är hemma från FRC Orlando!",
+    "bulletinP1": "ED Robotics har representerat Sverige i FIRST Robotics Competition i Orlando, Florida – världens största robottävling för unga ingenjörer. Efter en händelserik vecka på tävlingsfältet är hela laget välbärgat hemma igen.",
+    "bulletinP2": "Läs hela sammanfattningen: från robotbygge i sista minuten till klättrande robotar och ett besök på Kennedy Space Center.",
+    "bulletinThanks": "Tack till alla som gjorde resan möjlig! ❤️",
+    "bulletinCtaRecap": "Läs hela recapen",
+    "bulletinCtaSupport": "Stötta nästa säsong",
+    "loveTechKicker": "Vi älskar teknik",
+    "card1Tag": "Om föreningen",
+    "card1Title": "Vi älskar teknik",
+    "card1Body": "Vad gör vi och var gör vi det? Läs om våra projekt, tävlingar och vardagen i verkstaden.",
+    "card2Tag": "Reseberättelse",
+    "card2Title": "New York, New York",
+    "card2Body": "Under 2024 åkte vi till Albany, NY för att delta i First Robotics Competition.",
+    "card3Tag": "Samarbete",
+    "card3Title": "Bli partner med oss!",
+    "card3Body": "Vi har ett brett urval av sponsorpaket för företag som vill stötta unga ingenjörer.",
+    "seasonKicker": "Season recap",
+    "seasonTitle": "Season Recap 2024",
+    "seasonBody": "Under 2024 var vi det enda laget från Sverige att delta i First Robotics Competition. Hur gick det till? Se hela resan i vår Season Recap.",
+    "seasonCta": "Se filmen",
+    "sponsorsKicker": "Våra sponsorer",
+    "challengeTitle": "Redo för en utmaning?",
+    "challengeBody": "Om du gillar robotik, teknik eller helt enkelt en utmaning – gå med! Följ våra projekt och var med när vi tävlar i RoboCup och FIRST Robotics Competition i USA.",
+    "challengeCtaJoin": "Gå med i teamet",
+    "challengeCtaAbout": "Läs om oss"
+  },
+  "about": {
+    "meta": {
+      "title": "Om oss | ED Robotics",
+      "description": "Lär känna ED Robotics — vilka vi är, vad vi gör och var vi träffas."
+    },
+    "kicker": "Om föreningen",
+    "whoTitle": "Vilka vi är",
+    "who1": "ED Robotics är en robotklubb etablerad i Erik Dahlbergsgymnasiet, Jönköping. Vårt mål är att inte bara ge ED:s studenter möjligheten att delta i spännande och lärorika robotprojekt, utan också att bygga en varm och framgångsrik gemenskap av framtida ingenjörer.",
+    "who2": "ED Robotics grundades 2022 och vi arbetar för närvarande med flera oberoende robotprojekt, framför allt RoboCup och FRC. Hjälp oss att bygga robotar som går, rullar, simmar, flyger, spelar fotboll och till och med navigerar på Mars!",
+    "whatKicker": "Vad vi gör",
+    "what1": "Medlemmar får en chans att göra en betydande inverkan på ett komplext, multidisciplinärt och flerledat ingenjörsprojekt på en nivå som de flesta gymnasieelever normalt inte möter. Som medlem får du erfarenhet av fräsning, 3D-utskrift, mikrokontroller, elektronik, kodningsspråk, hårdvara–mjukvara-integration, algoritmer och mycket mer.",
+    "what2": "Ingen tidigare erfarenhet av robotteknik är nödvändig, men en vilja att lära sig och att lägga ner tid krävs. Vill du bygga några coola robotar och ha kul medan du håller på? Gå med!",
+    "competitionsKicker": "Tävlingar",
+    "frcTag": "FIRST Robotics Competition",
+    "frcTitle": "FRC",
+    "frcBody": "I FIRST Robotics Competition kombineras sportens spänning med vetenskapens och teknikens stränghet – kallad \"den ultimata sporten för hjärnan\". Under strikta regler, begränsade resurser och begränsad tid utmanas lag att samla in pengar, designa ett lag-\"varumärke\", finslipa teamwork och bygga samt programmera robotar i industriell storlek för att spela ett svårt fältspel mot likasinnade konkurrenter. Frivilliga professionella mentorer lånar ut sin tid och talang för att vägleda varje lag.",
+    "robocupTag": "RoboCup Junior",
+    "robocupTitle": "RoboCup",
+    "robocupBody": "RoboCup Junior är en projektorienterad robottävling för elever till och med 19 år, med fokus på att skapa en miljö där eleverna växer genom att utöka sina kunskaper, väcka nyfikenhet och bli bekväma med teknik. Tävlingen har tre grenar — Soccer, Rescue och OnStage — var och en byggd kring samarbetsvillig problemlösning för kreativa unga hjärnor med olika intressen och färdigheter.",
+    "meetKicker": "Var vi träffas",
+    "daysLabel": "Dagar",
+    "daysValue": "Onsdag + Torsdag",
+    "timeLabel": "Tid",
+    "timeValue": "Efter lektionstid",
+    "placeLabel": "Plats",
+    "placeValue": "Verkstaden, A-huset",
+    "schoolLabel": "Skola",
+    "schoolValue": "Erik Dahlbergsgymnasiet"
+  },
+  "partners": {
+    "meta": {
+      "title": "Partners | ED Robotics",
+      "description": "Bli partner med ED Robotics och stötta framtidens ingenjörer."
+    },
+    "kicker": "Samarbete",
+    "title1": "Våra sponsorer gör",
+    "title2": "ED Robotics möjligt",
+    "intro": "Att bygga robotar är roligt, men utrustning och material är inte billiga, och i takt med att vi expanderar ökar även våra driftskostnader. Ert stöd till vår klubb exponerar inte bara era produkter och uppdrag för Erik Dahlbergs studenter och allmänheten — det genererar också meningsfulla utbildnings- och professionella möjligheter för våra blivande ingenjörer.",
+    "packageKicker": "Sponsorpaket",
+    "packageTitle": "Bidra ekonomiskt, med material eller expertis",
+    "packageBody": "Vi har ett urval av sponsorpaket för företag och privatpersoner som vill stötta oss. Om du vill bidra ekonomiskt, alternativt med material, komponenter eller expertis, kontakta oss gärna direkt.",
+    "brochureCta": "Ladda ner broschyr",
+    "currentKicker": "Nuvarande partners",
+    "openSlot": "+ Bli vår nästa partner"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blogg | ED Robotics",
+      "description": "Senaste nytt från ED Robotics — tävlingar, resor och milstolpar."
+    },
+    "kicker": "Nyheter & uppdateringar",
+    "title": "Senaste nytt",
+    "allTags": "Alla",
+    "tagsHeading": "Populära taggar",
+    "archiveHeading": "Arkiv",
+    "noPosts": "Inga inlägg med den taggen ännu.",
+    "backToAll": "← Alla inlägg",
+    "notFound": "Inlägg hittades inte | ED Robotics"
+  },
+  "media": {
+    "meta": {
+      "title": "Media | ED Robotics",
+      "description": "Bilder och video från ED Robotics verkstad och tävlingar."
+    },
+    "kicker": "Bilder & video",
+    "title": "Bilder från verkstaden och tävlingsfältet",
+    "intro": "Ett urval från säsongerna i verkstaden, på RoboCup och på FRC-fältet i USA. Fler bilder och video hittar du på våra sociala kanaler nedan.",
+    "followHeading": "Följ oss",
+    "viewLarger": "Visa bild i större format: {alt}",
+    "close": "Stäng",
+    "prev": "Föregående bild",
+    "next": "Nästa bild"
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt | ED Robotics",
+      "description": "Kontakta ED Robotics — frågor, partnerskap eller medlemskap."
+    },
+    "kicker": "Hör av dig",
+    "title": "Kontakta oss",
+    "intro": "Har du en fråga, vill bli partner eller är nyfiken på att gå med i teamet? Använd formuläret eller nå oss direkt.",
+    "nameLabel": "Namn *",
+    "namePlaceholder": "Ditt namn",
+    "emailLabel": "E-post *",
+    "emailPlaceholder": "Din e-postadress",
+    "messageLabel": "Meddelande *",
+    "messagePlaceholder": "Skriv ditt meddelande här",
+    "send": "Skicka",
+    "sending": "Skickar…",
+    "reset": "Återställ",
+    "successMsg": "✓ Tack! Ditt meddelande är skickat.",
+    "notConfiguredMsg": "Formuläret är inte konfigurerat ännu — lägg till NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY i .env.local.",
+    "errorMsg": "Något gick fel. Prova igen, eller maila oss direkt på sponsorship@edrobotics.se.",
+    "sponsorshipLabel": "Sponsring",
+    "placeLabel": "Plats",
+    "placeValue": "Verkstaden, A-huset",
+    "placeValue2": "Erik Dahlbergsgymnasiet, Jönköping",
+    "openHouseLabel": "Öppet hus",
+    "openHouseValue": "Onsdagar & torsdagar, efter lektionstid",
+    "socialLabel": "Sociala kanaler",
+    "formSubject": "Nytt meddelande från edrobotics.se",
+    "formFromName": "ED Robotics — kontaktformulär"
+  }
+}

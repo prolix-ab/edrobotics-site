@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { DimRule, LinkCard, OpenSponsorSlot, SponsorLogo } from "@/components/ui";
 import { sponsors } from "@/data/content";
 
-export default function HomePage() {
+export async function generateMetadata(props: PageProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "home.meta" });
+  return { title: t("title"), description: t("description") };
+}
+
+export default async function HomePage(props: PageProps<"/[locale]">) {
+  const { locale } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations("home");
+  const tp = await getTranslations("partners");
+
   return (
     <>
       <section className="mx-auto max-w-6xl px-7 pb-14 pt-16">
@@ -19,23 +32,20 @@ export default function HomePage() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/50 to-black/10" />
 
           <h1 className="font-display text-[2.8rem] font-extrabold leading-[0.98] tracking-tight text-white sm:text-[4.4rem] lg:text-[5.2rem]">
-            Vi bygger
+            {t("heroTitle1")}
             <br />
-            framtidens
+            {t("heroTitle2")}
             <br />
-            <span className="text-accent">ingenjörer.</span>
+            <span className="text-accent">{t("heroTitleAccent")}</span>
           </h1>
-          <p className="mb-7 mt-6 max-w-[46ch] text-lg text-white/85">
-            ED Robotics är en förening som inspirerar och skapar framtidens innovatörer — byggd av
-            gymnasieelever på Erik Dahlbergsgymnasiet i Jönköping.
-          </p>
+          <p className="mb-7 mt-6 max-w-[46ch] text-lg text-white/85">{t("heroLede")}</p>
           <div className="flex flex-wrap gap-3">
-            <a href="/partners" className="btn btn-primary">
-              Bli partner
-            </a>
-            <a href="/kontakt" className="btn border-white/40 text-white hover:border-accent">
-              Gå med i teamet
-            </a>
+            <Link href="/partners" className="btn btn-primary">
+              {t("ctaPartner")}
+            </Link>
+            <Link href="/kontakt" className="btn border-white/40 text-white hover:border-accent">
+              {t("ctaJoin")}
+            </Link>
           </div>
         </div>
       </section>
@@ -46,71 +56,59 @@ export default function HomePage() {
             <div>
               <span className="badge-live mb-4">
                 <span className="dot" />
-                Aktuellt · FRC2026
+                {t("bulletinBadge")}
               </span>
               <h3 className="mb-3.5 text-2xl font-extrabold tracking-tight sm:text-3xl">
-                Vi är hemma från FRC Orlando!
+                {t("bulletinTitle")}
               </h3>
-              <p className="mb-3.5 text-muted">
-                ED Robotics har representerat Sverige i FIRST Robotics Competition i Orlando, Florida –
-                världens största robottävling för unga ingenjörer. Efter en händelserik vecka på
-                tävlingsfältet är hela laget välbärgat hemma igen.
-              </p>
-              <p className="mb-3.5 text-muted">
-                Läs hela sammanfattningen: från robotbygge i sista minuten till klättrande robotar och ett
-                besök på Kennedy Space Center.
-              </p>
-              <p className="mt-4 text-sm italic text-muted-2">
-                Tack till alla som gjorde resan möjlig! ❤️
-              </p>
+              <p className="mb-3.5 text-muted">{t("bulletinP1")}</p>
+              <p className="mb-3.5 text-muted">{t("bulletinP2")}</p>
+              <p className="mt-4 text-sm italic text-muted-2">{t("bulletinThanks")}</p>
             </div>
             <div className="flex flex-col justify-center gap-3">
               <Link href="/blogg/frc-orlando-2026-sa-gick-det" className="btn btn-primary justify-center">
-                Läs hela recapen
+                {t("bulletinCtaRecap")}
               </Link>
-              <a href="/partners" className="btn btn-outline justify-center">
-                Stötta nästa säsong
-              </a>
+              <Link href="/partners" className="btn btn-outline justify-center">
+                {t("bulletinCtaSupport")}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-7 pt-16">
-        <DimRule label="Vi älskar teknik" className="mb-10" />
+        <DimRule label={t("loveTechKicker")} className="mb-10" />
         <div className="grid gap-5 md:grid-cols-3">
           <LinkCard
             href="/om-oss"
-            tag="Om föreningen"
-            title="Vi älskar teknik"
+            tag={t("card1Tag")}
+            title={t("card1Title")}
             image={{ src: "/images/gallery/gallery-06.jpg", alt: "Medlemmar bygger och justerar tävlingsroboten" }}
           >
-            Vad gör vi och var gör vi det? Läs om våra projekt, tävlingar och vardagen i verkstaden.
+            {t("card1Body")}
           </LinkCard>
           <LinkCard
             href="/blogg/rookie-allstars"
-            tag="Reseberättelse"
-            title="New York, New York"
+            tag={t("card2Tag")}
+            title={t("card2Title")}
             image={{ src: "/images/gallery/gallery-33.jpg", alt: "Empire State Plaza i Albany, New York, nattetid" }}
           >
-            Under 2024 åkte vi till Albany, NY för att delta i First Robotics Competition.
+            {t("card2Body")}
           </LinkCard>
-          <LinkCard href="/partners" tag="Samarbete" title="Bli partner med oss!">
-            Vi har ett brett urval av sponsorpaket för företag som vill stötta unga ingenjörer.
+          <LinkCard href="/partners" tag={t("card3Tag")} title={t("card3Title")}>
+            {t("card3Body")}
           </LinkCard>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-7 pt-16">
-        <DimRule label="Season recap" className="mb-10" />
+        <DimRule label={t("seasonKicker")} className="mb-10" />
         <div className="rounded-[14px] bg-surface-3 p-9">
           <div className="grid items-center gap-7 sm:grid-cols-[1fr_auto]">
             <div>
-              <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Season Recap 2024</h3>
-              <p className="mt-2.5 text-muted">
-                Under 2024 var vi det enda laget från Sverige att delta i First Robotics Competition. Hur
-                gick det till? Se hela resan i vår Season Recap.
-              </p>
+              <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{t("seasonTitle")}</h3>
+              <p className="mt-2.5 text-muted">{t("seasonBody")}</p>
             </div>
             <a
               href="https://youtu.be/MXsK6zBDzVM?si=qCxQSKZZFa7eOA5P"
@@ -118,38 +116,35 @@ export default function HomePage() {
               rel="noopener"
               className="btn btn-primary"
             >
-              Se filmen
+              {t("seasonCta")}
             </a>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-7 pt-16">
-        <DimRule label="Våra sponsorer" className="mb-10" />
+        <DimRule label={t("sponsorsKicker")} className="mb-10" />
         <div className="flex flex-wrap gap-4">
           {sponsors.map((s) => (
             <SponsorLogo key={s.name} sponsor={s} />
           ))}
-          <OpenSponsorSlot />
+          <OpenSponsorSlot label={tp("openSlot")} />
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-7 py-16">
         <div className="panel px-9 py-14 text-center">
           <h3 className="mx-auto mb-3.5 max-w-none text-2xl font-extrabold tracking-tight sm:text-3xl">
-            Redo för en utmaning?
+            {t("challengeTitle")}
           </h3>
-          <p className="mx-auto mb-7 max-w-[56ch] text-muted">
-            Om du gillar robotik, teknik eller helt enkelt en utmaning – gå med! Följ våra projekt och var
-            med när vi tävlar i RoboCup och FIRST Robotics Competition i USA.
-          </p>
+          <p className="mx-auto mb-7 max-w-[56ch] text-muted">{t("challengeBody")}</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="/kontakt" className="btn btn-primary">
-              Gå med i teamet
-            </a>
-            <a href="/om-oss" className="btn btn-outline">
-              Läs om oss
-            </a>
+            <Link href="/kontakt" className="btn btn-primary">
+              {t("challengeCtaJoin")}
+            </Link>
+            <Link href="/om-oss" className="btn btn-outline">
+              {t("challengeCtaAbout")}
+            </Link>
           </div>
         </div>
       </section>

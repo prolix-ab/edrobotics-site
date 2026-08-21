@@ -1,43 +1,40 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DimRule, Eyebrow, OpenSponsorSlot, SponsorLogo } from "@/components/ui";
 import { sponsors } from "@/data/content";
 
-export const metadata: Metadata = {
-  title: "Partners | ED Robotics",
-  description: "Bli partner med ED Robotics och stötta framtidens ingenjörer.",
-};
+export async function generateMetadata(props: PageProps<"/[locale]/partners">): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "partners.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
-export default function PartnersPage() {
+export default async function PartnersPage(props: PageProps<"/[locale]/partners">) {
+  const { locale } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations("partners");
+
   return (
     <>
       <section className="mx-auto max-w-6xl px-7 pb-4 pt-14">
-        <Eyebrow>Samarbete</Eyebrow>
+        <Eyebrow>{t("kicker")}</Eyebrow>
         <h2 className="mb-5 text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Våra sponsorer gör
+          {t("title1")}
           <br />
-          ED Robotics möjligt
+          {t("title2")}
         </h2>
-        <p className="max-w-[74ch] text-lg text-muted">
-          Att bygga robotar är roligt, men utrustning och material är inte billiga, och i takt med att vi
-          expanderar ökar även våra driftskostnader. Ert stöd till vår klubb exponerar inte bara era
-          produkter och uppdrag för Erik Dahlbergs studenter och allmänheten — det genererar också
-          meningsfulla utbildnings- och professionella möjligheter för våra blivande ingenjörer.
-        </p>
+        <p className="max-w-[74ch] text-lg text-muted">{t("intro")}</p>
       </section>
 
       <section className="mx-auto max-w-6xl px-7 pt-12">
         <div className="panel p-9">
           <div className="grid gap-9 md:grid-cols-[1.4fr_1fr]">
             <div>
-              <span className="kicker mb-4">Sponsorpaket</span>
+              <span className="kicker mb-4">{t("packageKicker")}</span>
               <h3 className="mb-3.5 max-w-none text-2xl font-extrabold tracking-tight sm:text-3xl">
-                Bidra ekonomiskt, med material eller expertis
+                {t("packageTitle")}
               </h3>
-              <p className="text-muted">
-                Vi har ett urval av sponsorpaket för företag och privatpersoner som vill stötta oss. Om du
-                vill bidra ekonomiskt, alternativt med material, komponenter eller expertis, kontakta oss
-                gärna direkt.
-              </p>
+              <p className="text-muted">{t("packageBody")}</p>
             </div>
             <div className="flex flex-col justify-center gap-3">
               <a href="mailto:sponsorship@edrobotics.se" className="btn btn-primary justify-center">
@@ -49,7 +46,7 @@ export default function PartnersPage() {
                 rel="noopener"
                 className="btn btn-outline justify-center"
               >
-                Ladda ner broschyr
+                {t("brochureCta")}
               </a>
             </div>
           </div>
@@ -57,12 +54,12 @@ export default function PartnersPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-7 pb-20 pt-14">
-        <DimRule label="Nuvarande partners" className="mb-8" />
+        <DimRule label={t("currentKicker")} className="mb-8" />
         <div className="flex flex-wrap gap-4">
           {sponsors.map((s) => (
             <SponsorLogo key={s.name} sponsor={s} />
           ))}
-          <OpenSponsorSlot />
+          <OpenSponsorSlot label={t("openSlot")} />
         </div>
       </section>
     </>

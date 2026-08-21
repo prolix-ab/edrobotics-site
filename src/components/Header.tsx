@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { Link, usePathname } from "@/i18n/navigation";
 import { navItems } from "@/data/content";
 import { LogoMark, Wordmark } from "./icons";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -32,16 +34,17 @@ export default function Header() {
                     : "border-transparent text-muted hover:text-ink"
                 }`}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}
         </nav>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
-            aria-label="Öppna meny"
+            aria-label={t("openMenu")}
             onClick={() => setOpen((v) => !v)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"
           >
@@ -74,7 +77,7 @@ export default function Header() {
                   active ? "font-semibold text-ink" : "text-muted"
                 }`}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}

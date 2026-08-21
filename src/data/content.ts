@@ -1,10 +1,10 @@
 export const navItems = [
-  { num: "01", label: "Hem", href: "/" },
-  { num: "02", label: "Om oss", href: "/om-oss" },
-  { num: "03", label: "Partners", href: "/partners" },
-  { num: "04", label: "Blogg", href: "/blogg" },
-  { num: "05", label: "Media", href: "/media" },
-  { num: "06", label: "Kontakt", href: "/kontakt" },
+  { num: "01", key: "home", href: "/" },
+  { num: "02", key: "about", href: "/om-oss" },
+  { num: "03", key: "partners", href: "/partners" },
+  { num: "04", key: "blog", href: "/blogg" },
+  { num: "05", key: "media", href: "/media" },
+  { num: "06", key: "contact", href: "/kontakt" },
 ] as const;
 
 const galleryAltOverrides: Record<number, string> = {

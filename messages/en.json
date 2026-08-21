@@ -1,0 +1,173 @@
+{
+  "site": {
+    "title": "ED Robotics — Erik Dahlberg Upper Secondary School",
+    "description": "ED Robotics is a club at Erik Dahlberg Upper Secondary School in Jönköping, Sweden, inspiring the next generation of innovators through FIRST Robotics Competition and RoboCup."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "partners": "Partners",
+    "blog": "Blog",
+    "media": "Media",
+    "contact": "Contact",
+    "openMenu": "Open menu"
+  },
+  "theme": {
+    "toggle": "Switch between light and dark theme"
+  },
+  "language": {
+    "sv": "Swedish",
+    "en": "English",
+    "switchTo": "Switch to {lang}"
+  },
+  "footer": {
+    "tagline": "A club that inspires and builds the innovators of tomorrow. Erik Dahlberg Upper Secondary School, Jönköping.",
+    "pagesHeading": "Pages",
+    "moreHeading": "More",
+    "followHeading": "Follow us",
+    "sponsorship": "Sponsorship",
+    "copyright": "© 2026 ED Robotics — an independent club at Erik Dahlberg Upper Secondary School",
+    "location": "Jönköping, Sweden"
+  },
+  "home": {
+    "meta": {
+      "title": "ED Robotics — Erik Dahlberg Upper Secondary School",
+      "description": "ED Robotics is a club at Erik Dahlberg Upper Secondary School in Jönköping, Sweden, inspiring the next generation of innovators through FIRST Robotics Competition and RoboCup."
+    },
+    "heroTitle1": "We build",
+    "heroTitle2": "tomorrow's",
+    "heroTitleAccent": "engineers.",
+    "heroLede": "ED Robotics is a club that inspires and builds the innovators of tomorrow — run by upper secondary students at Erik Dahlberg Upper Secondary School in Jönköping.",
+    "ctaPartner": "Become a partner",
+    "ctaJoin": "Join the team",
+    "bulletinBadge": "Latest · FRC2026",
+    "bulletinTitle": "We're back from FRC Orlando!",
+    "bulletinP1": "ED Robotics represented Sweden at the FIRST Robotics Competition in Orlando, Florida – the world's largest robotics competition for young engineers. After an eventful week on the field, the whole team is safely back home.",
+    "bulletinP2": "Read the full recap: from last-minute robot builds to climbing robots and a visit to the Kennedy Space Center.",
+    "bulletinThanks": "Thank you to everyone who made the trip possible! ❤️",
+    "bulletinCtaRecap": "Read the full recap",
+    "bulletinCtaSupport": "Support next season",
+    "loveTechKicker": "We love engineering",
+    "card1Tag": "About the club",
+    "card1Title": "We love engineering",
+    "card1Body": "What do we do, and where do we do it? Read about our projects, competitions, and everyday life in the workshop.",
+    "card2Tag": "Travel story",
+    "card2Title": "New York, New York",
+    "card2Body": "In 2024 we traveled to Albany, NY to compete in the First Robotics Competition.",
+    "card3Tag": "Partnership",
+    "card3Title": "Become a partner!",
+    "card3Body": "We offer a wide range of sponsorship packages for companies who want to support young engineers.",
+    "seasonKicker": "Season recap",
+    "seasonTitle": "Season Recap 2024",
+    "seasonBody": "In 2024 we were the only team from Sweden to compete in the First Robotics Competition. How did it go? Watch the whole journey in our Season Recap.",
+    "seasonCta": "Watch the film",
+    "sponsorsKicker": "Our sponsors",
+    "challengeTitle": "Ready for a challenge?",
+    "challengeBody": "If you're into robotics, engineering, or simply a challenge – join us! Follow our projects and be part of the team when we compete in RoboCup and the FIRST Robotics Competition in the USA.",
+    "challengeCtaJoin": "Join the team",
+    "challengeCtaAbout": "Read about us"
+  },
+  "about": {
+    "meta": {
+      "title": "About us | ED Robotics",
+      "description": "Get to know ED Robotics — who we are, what we do, and where we meet."
+    },
+    "kicker": "About the club",
+    "whoTitle": "Who we are",
+    "who1": "ED Robotics is a robotics club based at Erik Dahlberg Upper Secondary School in Jönköping. Our goal isn't just to give ED's students the chance to take part in exciting, hands-on robotics projects — it's to build a warm and successful community of future engineers.",
+    "who2": "ED Robotics was founded in 2022, and we currently work on several independent robotics projects, primarily RoboCup and FRC. Help us build robots that walk, roll, swim, fly, play football, and even navigate Mars!",
+    "whatKicker": "What we do",
+    "what1": "Members get the chance to make a real impact on a complex, multidisciplinary, multi-stage engineering project at a level most upper secondary students never encounter. As a member, you'll gain experience in milling, 3D printing, microcontrollers, electronics, coding languages, hardware–software integration, algorithms, and much more.",
+    "what2": "No prior experience with robotics is required, but a willingness to learn and put in the time is. Want to build some cool robots and have fun while you're at it? Join us!",
+    "competitionsKicker": "Competitions",
+    "frcTag": "FIRST Robotics Competition",
+    "frcTitle": "FRC",
+    "frcBody": "FIRST Robotics Competition combines the excitement of sport with the rigor of science and technology – often called \"the ultimate sport for the mind\". Under strict rules, limited resources, and tight deadlines, teams are challenged to raise funds, design a team \"brand\", hone teamwork skills, and build and program industrial-sized robots to play a difficult field game against like-minded competitors. Volunteer professional mentors lend their time and talent to guide every team.",
+    "robocupTag": "RoboCup Junior",
+    "robocupTitle": "RoboCup",
+    "robocupBody": "RoboCup Junior is a project-oriented robotics competition for students up to age 19, focused on creating an environment where students grow by expanding their knowledge, sparking their curiosity, and becoming comfortable with technology. The competition has three branches — Soccer, Rescue, and OnStage — each built around collaborative problem-solving for creative young minds with a range of interests and skills.",
+    "meetKicker": "Where we meet",
+    "daysLabel": "Days",
+    "daysValue": "Wednesday + Thursday",
+    "timeLabel": "Time",
+    "timeValue": "After school hours",
+    "placeLabel": "Location",
+    "placeValue": "The workshop, Building A",
+    "schoolLabel": "School",
+    "schoolValue": "Erik Dahlberg Upper Secondary School"
+  },
+  "partners": {
+    "meta": {
+      "title": "Partners | ED Robotics",
+      "description": "Become a partner with ED Robotics and support the engineers of tomorrow."
+    },
+    "kicker": "Partnership",
+    "title1": "Our sponsors make",
+    "title2": "ED Robotics possible",
+    "intro": "Building robots is fun, but equipment and materials aren't cheap, and as we grow, so do our running costs. Supporting our club doesn't just expose your products and mission to Erik Dahlberg's students and the public — it also creates meaningful educational and professional opportunities for our future engineers.",
+    "packageKicker": "Sponsorship packages",
+    "packageTitle": "Contribute financially, with materials, or with expertise",
+    "packageBody": "We offer a range of sponsorship packages for companies and individuals who want to support us. If you'd like to contribute financially, or alternatively with materials, components, or expertise, please get in touch directly.",
+    "brochureCta": "Download brochure",
+    "currentKicker": "Current partners",
+    "openSlot": "+ Become our next partner"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog | ED Robotics",
+      "description": "The latest news from ED Robotics — competitions, trips, and milestones."
+    },
+    "kicker": "News & updates",
+    "title": "Latest news",
+    "allTags": "All",
+    "tagsHeading": "Popular tags",
+    "archiveHeading": "Archive",
+    "noPosts": "No posts with that tag yet.",
+    "backToAll": "← All posts",
+    "notFound": "Post not found | ED Robotics"
+  },
+  "media": {
+    "meta": {
+      "title": "Media | ED Robotics",
+      "description": "Photos and video from the ED Robotics workshop and competitions."
+    },
+    "kicker": "Photos & video",
+    "title": "Photos from the workshop and the competition field",
+    "intro": "A selection from our seasons in the workshop, at RoboCup, and on the FRC field in the USA. More photos and video can be found on our social channels below.",
+    "followHeading": "Follow us",
+    "viewLarger": "View larger image: {alt}",
+    "close": "Close",
+    "prev": "Previous image",
+    "next": "Next image"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact | ED Robotics",
+      "description": "Contact ED Robotics — questions, partnerships, or membership."
+    },
+    "kicker": "Get in touch",
+    "title": "Contact us",
+    "intro": "Have a question, want to become a partner, or curious about joining the team? Use the form or reach us directly.",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "Your email address",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Write your message here",
+    "send": "Send",
+    "sending": "Sending…",
+    "reset": "Reset",
+    "successMsg": "✓ Thanks! Your message has been sent.",
+    "notConfiguredMsg": "The form isn't configured yet — add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to .env.local.",
+    "errorMsg": "Something went wrong. Please try again, or email us directly at sponsorship@edrobotics.se.",
+    "sponsorshipLabel": "Sponsorship",
+    "placeLabel": "Location",
+    "placeValue": "The workshop, Building A",
+    "placeValue2": "Erik Dahlberg Upper Secondary School, Jönköping",
+    "openHouseLabel": "Open house",
+    "openHouseValue": "Wednesdays & Thursdays, after school hours",
+    "socialLabel": "Social channels",
+    "formSubject": "New message from edrobotics.se",
+    "formFromName": "ED Robotics — contact form"
+  }
+}

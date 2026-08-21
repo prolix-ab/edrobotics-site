@@ -1,29 +1,30 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DimRule, Eyebrow } from "@/components/ui";
 import { galleryImages, socialLinks } from "@/data/content";
 import { socialIconByName } from "@/components/icons";
 import MediaGallery from "@/components/MediaGallery";
 
-export const metadata: Metadata = {
-  title: "Media | ED Robotics",
-  description: "Bilder och video från ED Robotics verkstad och tävlingar.",
-};
+export async function generateMetadata(props: PageProps<"/[locale]/media">): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "media.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
-export default function MediaPage() {
+export default async function MediaPage(props: PageProps<"/[locale]/media">) {
+  const { locale } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations("media");
+
   return (
     <section className="mx-auto max-w-6xl px-7 pb-20 pt-14">
-      <Eyebrow>Bilder &amp; video</Eyebrow>
-      <h2 className="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-        Bilder från verkstaden och tävlingsfältet
-      </h2>
-      <p className="mb-10 max-w-[60ch] text-muted">
-        Ett urval från säsongerna i verkstaden, på RoboCup och på FRC-fältet i USA. Fler bilder och video
-        hittar du på våra sociala kanaler nedan.
-      </p>
+      <Eyebrow>{t("kicker")}</Eyebrow>
+      <h2 className="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{t("title")}</h2>
+      <p className="mb-10 max-w-[60ch] text-muted">{t("intro")}</p>
 
       <MediaGallery images={galleryImages} />
 
-      <DimRule label="Följ oss" className="mb-8 mt-14" />
+      <DimRule label={t("followHeading")} className="mb-8 mt-14" />
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {socialLinks.map((s) => {
           const Icon = socialIconByName[s.name];

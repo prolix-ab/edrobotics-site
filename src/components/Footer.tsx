@@ -1,8 +1,12 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { navItems, socialLinks } from "@/data/content";
 import { LogoMark, Wordmark, socialIconByName } from "./icons";
 
 export default function Footer() {
+  const t = useTranslations("nav");
+  const tf = useTranslations("footer");
+
   return (
     <footer className="border-t border-border px-7 pb-7 pt-12">
       <div className="mx-auto max-w-6xl">
@@ -12,19 +16,18 @@ export default function Footer() {
               <LogoMark className="h-5 w-5" />
               <Wordmark className="text-xl" />
             </div>
-            <p className="mt-3 max-w-[32ch] text-sm text-muted">
-              En förening som inspirerar och skapar framtidens innovatörer. Erik Dahlbergsgymnasiet,
-              Jönköping.
-            </p>
+            <p className="mt-3 max-w-[32ch] text-sm text-muted">{tf("tagline")}</p>
           </div>
 
           <div>
-            <h5 className="mb-3.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-2">Sidor</h5>
+            <h5 className="mb-3.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-2">
+              {tf("pagesHeading")}
+            </h5>
             <ul className="flex flex-col gap-2.5">
               {navItems.slice(0, 4).map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm hover:text-accent-text">
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
@@ -32,18 +35,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <h5 className="mb-3.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-2">Mer</h5>
+            <h5 className="mb-3.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-2">
+              {tf("moreHeading")}
+            </h5>
             <ul className="flex flex-col gap-2.5">
               {navItems.slice(4).map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm hover:text-accent-text">
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
               <li>
                 <a href="mailto:sponsorship@edrobotics.se" className="text-sm hover:text-accent-text">
-                  Sponsring
+                  {tf("sponsorship")}
                 </a>
               </li>
             </ul>
@@ -51,7 +56,7 @@ export default function Footer() {
 
           <div>
             <h5 className="mb-3.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-2">
-              Följ oss
+              {tf("followHeading")}
             </h5>
             <div className="flex gap-2.5">
               {socialLinks.map((s) => {
@@ -74,8 +79,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-6 font-mono text-[0.72rem] text-muted-2">
-          <span>© 2026 ED Robotics — fristående förening vid Erik Dahlbergsgymnasiet</span>
-          <span>Jönköping, Sverige</span>
+          <span>{tf("copyright")}</span>
+          <span>{tf("location")}</span>
         </div>
       </div>
     </footer>

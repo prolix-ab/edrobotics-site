@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
+import { Link } from "@/i18n/navigation";
 import type { PostMeta } from "@/lib/posts";
 import { formatPostDay, formatPostMonth } from "@/lib/date";
 
@@ -15,6 +16,7 @@ export default function BlogExplorer({
   tags: string[];
   archiveMonths: string[];
 }) {
+  const t = useTranslations("blog");
   const [active, setActive] = useState<string | null>(null);
 
   const visible = useMemo(
@@ -70,36 +72,38 @@ export default function BlogExplorer({
           </article>
         ))}
         {visible.length === 0 && (
-          <p className="py-8 text-sm text-muted">Inga inlägg med den taggen ännu.</p>
+          <p className="py-8 text-sm text-muted">{t("noPosts")}</p>
         )}
       </div>
 
       <aside>
         <div className="mb-9">
           <h4 className="mb-3.5 font-mono text-[0.75rem] uppercase tracking-widest text-muted-2">
-            Populära taggar
+            {t("tagsHeading")}
           </h4>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActive(null)}
               className={`chip cursor-pointer ${active === null ? "chip-active" : ""}`}
             >
-              Alla
+              {t("allTags")}
             </button>
-            {tags.map((t) => (
+            {tags.map((tag) => (
               <button
-                key={t}
-                onClick={() => setActive(t)}
-                className={`chip cursor-pointer ${active === t ? "chip-active" : ""}`}
+                key={tag}
+                onClick={() => setActive(tag)}
+                className={`chip cursor-pointer ${active === tag ? "chip-active" : ""}`}
               >
-                {t}
+                {tag}
               </button>
             ))}
           </div>
         </div>
 
         <div>
-          <h4 className="mb-3.5 font-mono text-[0.75rem] uppercase tracking-widest text-muted-2">Arkiv</h4>
+          <h4 className="mb-3.5 font-mono text-[0.75rem] uppercase tracking-widest text-muted-2">
+            {t("archiveHeading")}
+          </h4>
           <ul className="flex flex-col gap-2 font-mono text-sm text-muted">
             {archiveMonths.map((m) => (
               <li key={m}>{m}</li>

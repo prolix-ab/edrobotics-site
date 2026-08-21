@@ -1,23 +1,26 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Eyebrow } from "@/components/ui";
 import { socialLinks } from "@/data/content";
 import { ClockIcon, MailIcon, PinIcon, socialIconByName } from "@/components/icons";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata: Metadata = {
-  title: "Kontakt | ED Robotics",
-  description: "Kontakta ED Robotics — frågor, partnerskap eller medlemskap.",
-};
+export async function generateMetadata(props: PageProps<"/[locale]/kontakt">): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "contact.meta" });
+  return { title: t("title"), description: t("description") };
+}
 
-export default function ContactPage() {
+export default async function ContactPage(props: PageProps<"/[locale]/kontakt">) {
+  const { locale } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations("contact");
+
   return (
     <section className="mx-auto max-w-6xl px-7 pb-20 pt-14">
-      <Eyebrow>Hör av dig</Eyebrow>
-      <h2 className="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Kontakta oss</h2>
-      <p className="mb-10 max-w-[60ch] text-muted">
-        Har du en fråga, vill bli partner eller är nyfiken på att gå med i teamet? Använd formuläret eller
-        nå oss direkt.
-      </p>
+      <Eyebrow>{t("kicker")}</Eyebrow>
+      <h2 className="mb-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{t("title")}</h2>
+      <p className="mb-10 max-w-[60ch] text-muted">{t("intro")}</p>
 
       <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr]">
         <ContactForm />
@@ -27,7 +30,7 @@ export default function ContactPage() {
             <MailIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-accent-text" />
             <div>
               <span className="mb-0.5 block font-mono text-[0.68rem] uppercase tracking-widest text-muted">
-                Sponsring
+                {t("sponsorshipLabel")}
               </span>
               <a href="mailto:sponsorship@edrobotics.se" className="hover:text-accent-text">
                 sponsorship@edrobotics.se
@@ -39,11 +42,11 @@ export default function ContactPage() {
             <PinIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-accent-text" />
             <div>
               <span className="mb-0.5 block font-mono text-[0.68rem] uppercase tracking-widest text-muted">
-                Plats
+                {t("placeLabel")}
               </span>
-              Verkstaden, A-huset
+              {t("placeValue")}
               <br />
-              Erik Dahlbergsgymnasiet, Jönköping
+              {t("placeValue2")}
             </div>
           </div>
 
@@ -51,9 +54,9 @@ export default function ContactPage() {
             <ClockIcon className="mt-0.5 h-[18px] w-[18px] shrink-0 text-accent-text" />
             <div>
               <span className="mb-0.5 block font-mono text-[0.68rem] uppercase tracking-widest text-muted">
-                Öppet hus
+                {t("openHouseLabel")}
               </span>
-              Onsdagar &amp; torsdagar, efter lektionstid
+              {t("openHouseValue")}
             </div>
           </div>
 
@@ -61,7 +64,7 @@ export default function ContactPage() {
             <div className="mt-0.5 h-[18px] w-[18px] shrink-0" />
             <div>
               <span className="mb-2 block font-mono text-[0.68rem] uppercase tracking-widest text-muted">
-                Sociala kanaler
+                {t("socialLabel")}
               </span>
               <div className="flex gap-2.5">
                 {socialLinks.map((s) => {
