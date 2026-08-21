@@ -25,6 +25,19 @@ export function SpecCard({ children, className = "" }: { children: ReactNode; cl
 }
 
 export function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
+  if (!sponsor.logo) {
+    return (
+      <div
+        className="panel flex h-28 flex-1 basis-[180px] items-center justify-center p-4 text-center"
+        title={sponsor.name}
+      >
+        <span className="font-display text-[1.05rem] font-extrabold leading-tight tracking-tight text-muted opacity-70 transition-opacity duration-200 hover:opacity-100 hover:text-ink">
+          {sponsor.name}
+        </span>
+      </div>
+    );
+  }
+
   return (
     <div className="panel flex h-28 flex-1 basis-[180px] items-center justify-center p-6" title={sponsor.name}>
       {/* eslint-disable-next-line @next/next/no-img-element -- mixed svg/png/jpg/bmp logos aren't supported by next/image's optimizer without extra config */}

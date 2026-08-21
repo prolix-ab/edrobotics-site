@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw source material (personal photos/videos, phone numbers) — never publish this
+WhatsApp Chat with ED Robotics Orlando 26 - Supporters/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { DimRule, LinkCard, OpenSponsorSlot, SponsorLogo } from "@/components/ui";
 import { sponsors } from "@/data/content";
 
@@ -48,34 +49,27 @@ export default function HomePage() {
                 Aktuellt · FRC2026
               </span>
               <h3 className="mb-3.5 text-2xl font-extrabold tracking-tight sm:text-3xl">
-                ED Robotics åker till FRC i Orlando!
+                Vi är hemma från FRC Orlando!
               </h3>
               <p className="mb-3.5 text-muted">
-                Vi är stolta att kunna meddela att ED Robotics kommer att delta i FIRST Robotics
-                Competition i Orlando, Florida – världens största robottävling för unga ingenjörer.
+                ED Robotics har representerat Sverige i FIRST Robotics Competition i Orlando, Florida –
+                världens största robottävling för unga ingenjörer. Efter en händelserik vecka på
+                tävlingsfältet är hela laget välbärgat hemma igen.
               </p>
               <p className="mb-3.5 text-muted">
-                Nu behöver vi din hjälp för att göra resan möjlig. Bli partner och stötta framtidens
-                ingenjörer, eller bidra som privatperson.
+                Läs hela sammanfattningen: från robotbygge i sista minuten till klättrande robotar och ett
+                besök på Kennedy Space Center.
               </p>
               <p className="mt-4 text-sm italic text-muted-2">
-                Tack för att du hjälper oss hela vägen till Orlando! ❤️
+                Tack till alla som gjorde resan möjlig! ❤️
               </p>
             </div>
             <div className="flex flex-col justify-center gap-3">
-              <a
-                href="https://edrobotics.se/docs/ED_Robotics_2026.pdf"
-                target="_blank"
-                rel="noopener"
-                className="btn btn-primary justify-center"
-              >
-                Läs vår broschyr
-              </a>
-              <a href="#" className="btn btn-outline justify-center">
-                Bidra via GoFundMe
-              </a>
-              <a href="/partners" className="btn btn-ghost justify-center">
-                Sponsorpaket
+              <Link href="/blogg/frc-orlando-2026-sa-gick-det" className="btn btn-primary justify-center">
+                Läs hela recapen
+              </Link>
+              <a href="/partners" className="btn btn-outline justify-center">
+                Stötta nästa säsong
               </a>
             </div>
           </div>

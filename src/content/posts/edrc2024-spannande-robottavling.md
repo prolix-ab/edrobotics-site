@@ -19,6 +19,6 @@ Under tekniklektionerna har eleverna fått bygga sina robotar, vilket har gett d
 
 ## Framtidens ingenjörer
 
-EDRC2024 var inte bara en tävling, utan även en möjlighet för eleverna att få upp ögonen för den fantastiska världen av robotik. Förhoppningsvis har detta evenemang inspirerat många att gå med i ED Robotics och kanske till och med delta i vårt lag som kommer att tävla i First Robotics Competition nästa år. Tävlingen var en stor succé och vi ser redan fram emot nästa års evenemang. Mer information om tävlingsregler kan hittas [här](/edrc).
+EDRC2024 var inte bara en tävling, utan även en möjlighet för eleverna att få upp ögonen för den fantastiska världen av robotik. Förhoppningsvis har detta evenemang inspirerat många att gå med i ED Robotics och kanske till och med delta i vårt lag som kommer att tävla i First Robotics Competition nästa år. Tävlingen var en stor succé och vi ser redan fram emot nästa års evenemang.
 
 EDRC2024 visade verkligen att framtiden är ljus för teknikeleverna på Erik Dahlbergsgymnasiet. Vi hoppas att detta bara är början på en lång och framgångsrik resa inom robotik och teknik för alla deltagare.

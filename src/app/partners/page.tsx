@@ -44,7 +44,7 @@ export default function PartnersPage() {
                 sponsorship@edrobotics.se
               </a>
               <a
-                href="https://edrobotics.se/docs/ED_Robotics_2026.pdf"
+                href="/docs/ED_Robotics_2026.pdf"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-outline justify-center"
